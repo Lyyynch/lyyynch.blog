@@ -1,18 +1,30 @@
 <?php
 
-include_once './db.php';
+include_once './config/setup.php';
 
-$mysqli->query("DROP TABLE IF EXISTS blog_views");
-echo "Dropping `blog_views` if it exists...<br />";
+$args = $argv;
 
-$mysqli->query("DROP TABLE IF EXISTS blog_posts");
-echo "Dropping `blog_posts` if it exists...<br />";
+$dropTables = true;
 
-$mysqli->query("DROP TABLE IF EXISTS users");
-echo "Dropping `users` if it exists...<br />";
+foreach ($args as $arg) {
+    if (strpos($arg, '--drop') !== false) {
+        $result = substr($arg, strpos($arg, '=') + 1, strlen($arg));
+        if ($result === 'false' || $result === '0') {
+            $dropTables = false;
+        }
+    }
+}
 
+if ($dropTables) {
+    $mysqli->query("DROP TABLE IF EXISTS blog_views");
+    echo "Dropping `blog_views` if it exists...<br />";
 
+    $mysqli->query("DROP TABLE IF EXISTS blog_posts");
+    echo "Dropping `blog_posts` if it exists...<br />";
 
+    $mysqli->query("DROP TABLE IF EXISTS users");
+    echo "Dropping `users` if it exists...<br />";
+}
 
 $createUsers = "CREATE TABLE IF NOT EXISTS users (
     id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
