@@ -1,5 +1,5 @@
 <?php
-    require_once $_SERVER['DOCUMENT_ROOT'] . "/lyyynch.blog/config/setup.php";
+    require_once $_SERVER['DOCUMENT_ROOT'] . "/config/setup.php";
 
     unset($_SESSION["email_error"]);
     unset($_SESSION["password_error"]);
