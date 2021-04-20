@@ -1,3 +1,6 @@
+<?php
+    require_once $_SERVER['DOCUMENT_ROOT'].'/config/setup.php';
+?>
 <html>
     <?php
         $title = 'Posts - Lyyynch Blog';

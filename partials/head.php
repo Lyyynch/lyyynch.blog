@@ -13,5 +13,5 @@
     <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;900&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="/lyyynch.blog/styles.css" />
+    <link rel="stylesheet" href="/styles.css" />
 </head>

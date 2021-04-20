@@ -1,7 +1,5 @@
 <?php
 
-include_once $_SERVER['DOCUMENT_ROOT'] . '/lyyynch.blog/db.php';
-
 $rowsQuery = "SELECT blog_posts.*, CONCAT(users.first_name, ' ', users.last_name) AS user_name
             FROM blog_posts
             INNER JOIN users ON blog_posts.author_id = users.id
